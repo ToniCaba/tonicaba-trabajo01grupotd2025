@@ -1,5 +1,6 @@
 ---
 title: "Enunciados Problemas TD"
+author: " Claudia Trias de Tena, Reyes de las Aguas García Azancot"
 format:
   typst:
     fig-format: png
@@ -7,12 +8,13 @@ format:
 editor: visual
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Problema 1
+# Problemas Claudia 
+
+## Problema 1
 
 Aplica los criterios de decisión bajo incertidumbre e indica cual es la alternativa óptima basándote en la siguiente tabla y teniendo en cuenta todos los posibles criterios de decisión. Considera el problema para ambas situaciones: costes y beneficios.
 
@@ -29,7 +31,7 @@ knitr::kable(tabla)
 
 ```
 
-# Problema 2
+## Problema 2
 
 Paula y Claudia quieren hacer algo de deporte el fin de semana. Deciden que el día que mejor les viene es el domingo, pero no se ponen de acuerdo en el deporte que hacer. A ver si usted puede ayudarles. Tienen las siguientes opciones:
 
@@ -41,4 +43,54 @@ Paula y Claudia quieren hacer algo de deporte el fin de semana. Deciden que el d
 
 ¿Qué les recomienda usted que hagan, si su objetivo es minimizar los costes?
 
-# Problema 3
+\newpage
+
+# Problemas Reyes
+
+## Problema 1
+
+Aplicar los criterios de decisión bajo incertidumbre a los problemas cuya matriz de valores
+numéricos vienen dadas en las tablas siguientes:
+
+
+|        | e1  | e2  | e3  |
+|:------:|:---:|:---:|:---:|
+| **d1** | 120 |  60 | -20 |
+| **d2** |  80 | 140 |   0 |
+| **d3** | 200 |  50 | -100 |
+
+
+Realizarlo tanto para el caso favorable (beneficios) como para el desfavorable(costos).
+
+
+
+## Problema 2.
+
+Laura es una joven emprendedora que desea abrir una cafetería artesanal y se encuentra analizando tres posibles ubicaciones para instalar su negocio: un local en el centro comercial, otro en el barrio universitario, y un tercero en una zona residencial.
+
+Cada local presenta diferentes costes y características:
+
+El local del centro comercial tiene un alquiler mensual de 3.500 euros, pero se encuentra en una zona con gran afluencia de público.
+
+El local del barrio universitario cuesta 2.000 euros mensuales y está en una zona frecuentada por estudiantes y profesores, aunque su actividad disminuye durante el verano.
+
+El local de la zona residencial tiene un alquiler de 1.200 euros al mes, con un flujo de clientes más estable, pero mucho menor.
+
+Además del alquiler, Laura estima que deberá asumir otros costes anuales fijos, que incluyen:
+
+Proveedores (materias primas como café, leche, repostería, etc.), con un gasto de 60.000 euros anuales en el centro comercial, 55.000 euros en el barrio universitario y 50.000 euros en la zona residencial.
+
+Coste de personal, que será de 36.000 euros anuales (dos empleados a jornada completa).
+
+Otros gastos de mantenimiento, publicidad y electricidad, calculados en 8.000 euros para el centro comercial, 6.000 euros para el barrio universitario y 5.000 euros para la zona residencial.
+
+Laura cree que los ingresos anuales dependerán del estado de la economía durante el primer año de funcionamiento:
+
+Si la economía es favorable, calcula que podría ingresar 180.000 euros.
+
+Si la situación se mantiene estable, sus ingresos serían de unos 120.000 euros.
+
+Y si hay una recesión, las ventas podrían caer hasta 80.000 euros.
+
+Su objetivo es determinar cuál de los tres locales le conviene más.
+
