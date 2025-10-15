@@ -181,7 +181,7 @@ source("teoriadecision_funciones_incertidumbre.R")
 
 ## Problema 1. Aplicar los criterios de decisión bajo incertidumbre.
 
-### A. Caso favorable:
+### A. Caso favorable
 
 ```{r}
 
@@ -211,7 +211,7 @@ cat("Criterio Optimista (Maximax): la decisión óptima es la",
 
 # Criterio de Hurwicz
 hurwicz <- criterio.Hurwicz(tb01a, alfa = 0.4, favorable = TRUE)
-cat("Criterio de Hurwicz (α = 0.4): la decisión óptima es la",
+cat("Criterio de Hurwicz: la decisión óptima es la",
     hurwicz$AlternativaOptima)
 
 
@@ -235,7 +235,13 @@ cat("Criterio del Punto Ideal: la decisión óptima es la",
 
 # Dibujos de Hurwicz
 dibuja.criterio.Hurwicz(tb01a, TRUE)
-dibuja.criterio.Hurwicz_Intervalos(tb01a, TRUE, TRUE)
+gh1_01a=dibuja.criterio.Hurwicz_Intervalos(tb01a, TRUE, TRUE)
+gh1_01a
+
+cat("El valor del alpha donde la alternativa óptima pasa de ser la segunda a la tercera es: ",gh1_01a$PuntosDeCorte)
+```
+
+```{r}
 
 # Mostrar todos los criterios juntos
 sol01a=criterio.Todos(tb01a, 0.4, favorable = TRUE)
@@ -248,7 +254,7 @@ tt(sol01a, rownames = TRUE)
 La alternativa **d2** resulta ser la más recomendada, ya que es seleccionada como óptima
 por la mayoría de los criterios (Wald, Hurwicz y Laplace).
 
-### B. Caso desfavorable:
+### B. Caso desfavorable
 
 ```{r}
 
@@ -276,7 +282,7 @@ cat("Criterio Optimista (minimin): la decisión óptima es la",
 
 # Criterio de Hurwicz
 hurwicz <- criterio.Hurwicz(tb01b, alfa = 0.4, favorable = FALSE)
-cat("Criterio de Hurwicz (α = 0.4): la decisión óptima es la",
+cat("Criterio de Hurwicz: la decisión óptima es la",
     hurwicz$AlternativaOptima)
 
 # Criterio de Savage (minimax arrepentimiento)
@@ -297,9 +303,14 @@ cat("Criterio del Punto Ideal: la decisión óptima es la",
 
 # Dibujos de Hurwicz
 dibuja.criterio.Hurwicz(tb01b, FALSE)
-dibuja.criterio.Hurwicz_Intervalos(tb01b, FALSE, TRUE)
+gh1_01b=dibuja.criterio.Hurwicz_Intervalos(tb01b, FALSE, TRUE)
+gh1_01b
 
+cat("El valor del alfa donde la alternativa óptima pasa de ser la primera a la tercera es: ",gh1_01b$PuntosDeCorte)
 
+```
+
+```{r}
 # Mostrar todos los criterios juntos
 sol01b = criterio.Todos(tb01b, 0.4, favorable = FALSE)
 
@@ -310,6 +321,8 @@ tt(sol01b, rownames = TRUE)
 
 La alternativa **d1** es seleccionada como óptima por la mayoría de los criterios
 (Wald, Hurwicz, Savage y Punto Ideal).
+
+\newpage
 
 ## Problema 2.
 
@@ -336,35 +349,35 @@ e3: Recesión
 #Para e1:
 
 #Centro Comercial
-m11 = 180000-3500*12-60000-36000-8000
+m11 = 220000-5000*12-90000-54000-12000
 
 #Barrio Universitario
-m12 = 180000-2000*12-55000-36000-6000
+m12 = 160000-2500*12-60000-36000-8000
 
 #Zona Residencial
-m13 = 180000-1200*12-50000-36000-5000
+m13 = 130000-1000*12-35000-24000-6000
 
 
 #Para e2:
 #Centro Comercial
-m21 = 120000-3500*12-60000-36000-8000
+m21 = 150000-5000*12-90000-54000-12000
 
 #Barrio Universitario
-m22 = 120000-2000*12-55000-36000-6000
+m22 = 110000-2500*12-60000-36000-8000
 
 #Zona Residencial
-m23 = 120000-1200*12-50000-36000-5000
+m23 = 100000-1000*12-35000-24000-6000
 
 
 #Para e3:
 #Centro Comercial
-m31 = 80000-3500*12-60000-36000-8000
+m31 = 100000-5000*12-90000-54000-12000
 
 #Barrio Universitario
-m32 = 80000-2000*12-55000-36000-6000
+m32 = 70000-2500*12-60000-36000-8000
 
 #Zona Residencial
-m33 = 80000-1200*12-50000-36000-5000
+m33 = 75000-1000*12-35000-24000-6000
 
 tb02<-crea.tablaX(
   c(m11, m21, m31,  # Centro comercial
@@ -377,7 +390,7 @@ tb02<-crea.tablaX(
 
 tb02
 
-sol02 = criterio.Todos(tb02, 0.5, favorable = FALSE)
+sol02 = criterio.Todos(tb02, 0.5, favorable = TRUE)
 library(tinytable)
 tt(sol02, rownames = TRUE)
 
@@ -385,4 +398,11 @@ tt(sol02, rownames = TRUE)
 
 ```
 
-Según los distintos criterios de incertidumbre, Laura debería instalar su cafetería en el **centro comercial**.
+Según los distintos criterios de incertidumbre, Laura debería instalar su cafetería en el **zona residencial**.
+
+```{r}
+# Dibujos de Hurwicz
+dibuja.criterio.Hurwicz(tb02, TRUE)
+```
+
+Observando el gráfico, podemos apreciar que la alternativa de instalar la cafetería en el zona residencial es la óptima para cualquier valor de alpha entre 0 y 1.
