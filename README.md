@@ -2,7 +2,7 @@
 
 # Integrantes del grupo
 
-Claudia Trias de Tena
+Claudia Trias de Tena, Reyes de las Aguas García Azancot
 
 # Archivos del repositorio
 
