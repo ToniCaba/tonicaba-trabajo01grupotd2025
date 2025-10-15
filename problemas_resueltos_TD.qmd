@@ -1,9 +1,10 @@
 ---
 title: "Problemas Resueltos TD"
+author: " Claudia Trias de Tena, Reyes de las Aguas García Azancot"
 format:
- typst:
+  typst:
     fig-format: png
- html: default
+  html: default
 editor: visual
 ---
 
@@ -11,7 +12,9 @@ editor: visual
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Problema 1
+# Problemas Claudia
+
+## Problema 1
 
 Aplica los criterios de decisión bajo incertidumbre e indica cual es la alternativa óptima basándote en la siguiente tabla y teniendo en cuenta todos los posibles criterios de decisión. Considera el problema para ambas situaciones: costes y beneficios.
 
@@ -33,7 +36,7 @@ knitr::kable(tabla)
 Cargamos las funciones con las que vamos a trabajar:
 
 ```{r}
-source("C:/Users/usuario/OneDrive/Desktop/5º CARRERA/TD/TDecisionCodigo/teoriadecision_funciones_incertidumbre.R")
+source("teoriadecision_funciones_incertidumbre.R")
 ```
 
 Creamos la tabla en el formato que necesitan dichas funciones:
@@ -119,7 +122,7 @@ El punto en el que la alternativa óptima pasa de ser la segunda a la primera es
 
 \newpage
 
-# Problema 2
+## Problema 2
 
 Paula y Claudia quieren hacer algo de deporte el fin de semana. Deciden que el día que mejor les viene es el domingo, pero no se ponen de acuerdo en el deporte que hacer. A ver si usted puede ayudarles. Tienen las siguientes opciones:
 
@@ -170,4 +173,216 @@ El punto en el que la alternativa óptima pasa de ser la segunda a la tercera es
 
 \newpage
 
-# Problema 3
+# Problemas Reyes
+```{r, include=FALSE}
+source("teoriadecision_funciones_incertidumbre.R")
+
+```
+
+## Problema 1. Aplicar los criterios de decisión bajo incertidumbre.
+
+### A. Caso favorable:
+
+```{r}
+
+tb01a = crea.tablaX(
+  c(120, 60, -20,
+    80, 140, 0,
+    200, 50, -100),
+  numalternativas = 3,
+  numestados = 3
+)
+
+tb01a
+
+# Aplicar los criterios de decisión bajo incertidumbre
+
+# Criterio de Wald (pesimista)
+wald <- criterio.Wald(tb01a, favorable = TRUE)
+cat("Criterio de Wald (pesimista): la decisión óptima es la",
+    wald$AlternativaOptima)
+
+
+# Criterio Optimista (Maximax)
+optimista <- criterio.Optimista(tb01a, favorable = TRUE)
+cat("Criterio Optimista (Maximax): la decisión óptima es la",
+    optimista$AlternativaOptima)
+
+
+# Criterio de Hurwicz
+hurwicz <- criterio.Hurwicz(tb01a, alfa = 0.4, favorable = TRUE)
+cat("Criterio de Hurwicz (α = 0.4): la decisión óptima es la",
+    hurwicz$AlternativaOptima)
+
+
+# Criterio de Savage (minimax)
+savage <- criterio.Savage(tb01a, favorable = TRUE)
+cat("Criterio de Savage (minimax): la decisión óptima es la",
+    savage$AlternativaOptima)
+
+
+# Criterio de Laplace
+laplace <- criterio.Laplace(tb01a, favorable = TRUE)
+cat("Criterio de Laplace: la decisión óptima es la",
+    laplace$AlternativaOptima)
+
+
+# Criterio del Punto Ideal
+puntoideal <- criterio.PuntoIdeal(tb01a, favorable = TRUE)
+cat("Criterio del Punto Ideal: la decisión óptima es la",
+    puntoideal$AlternativaOptima)
+
+
+# Dibujos de Hurwicz
+dibuja.criterio.Hurwicz(tb01a, TRUE)
+dibuja.criterio.Hurwicz_Intervalos(tb01a, TRUE, TRUE)
+
+# Mostrar todos los criterios juntos
+sol01a=criterio.Todos(tb01a, 0.4, favorable = TRUE)
+
+library(tinytable)
+tt(sol01a, rownames = TRUE)
+
+```
+
+La alternativa **d2** resulta ser la más recomendada, ya que es seleccionada como óptima
+por la mayoría de los criterios (Wald, Hurwicz y Laplace).
+
+### B. Caso desfavorable:
+
+```{r}
+
+tb01b = crea.tablaX(
+  c(120, 60, -20,
+    80, 140, 0,
+    200, 50, -100),
+  numalternativas = 3,
+  numestados = 3
+)
+
+tb01b
+
+# Aplicar los criterios de decisión bajo incertidumbre
+
+# Criterio de Wald (pesimista)
+wald <- criterio.Wald(tb01b, favorable = FALSE)
+cat("Criterio de Wald (pesimista): la decisión óptima es la",
+    wald$AlternativaOptima)
+
+# Criterio Optimista (Minimin)
+optimista <- criterio.Optimista(tb01b, favorable = FALSE)
+cat("Criterio Optimista (minimin): la decisión óptima es la",
+    optimista$AlternativaOptima)
+
+# Criterio de Hurwicz
+hurwicz <- criterio.Hurwicz(tb01b, alfa = 0.4, favorable = FALSE)
+cat("Criterio de Hurwicz (α = 0.4): la decisión óptima es la",
+    hurwicz$AlternativaOptima)
+
+# Criterio de Savage (minimax arrepentimiento)
+savage <- criterio.Savage(tb01b, favorable = FALSE)
+cat("Criterio de Savage (minimax del arrepentimiento): la decisión óptima es la",
+    savage$AlternativaOptima)
+
+# Criterio de Laplace (promedio equiprobable)
+laplace <- criterio.Laplace(tb01b, favorable = FALSE)
+cat("Criterio de Laplace (equiprobable): la decisión óptima es la",
+    laplace$AlternativaOptima)
+
+# Criterio del Punto Ideal
+puntoideal <- criterio.PuntoIdeal(tb01b, favorable = FALSE)
+cat("Criterio del Punto Ideal: la decisión óptima es la",
+    puntoideal$AlternativaOptima)
+
+
+# Dibujos de Hurwicz
+dibuja.criterio.Hurwicz(tb01b, FALSE)
+dibuja.criterio.Hurwicz_Intervalos(tb01b, FALSE, TRUE)
+
+
+# Mostrar todos los criterios juntos
+sol01b = criterio.Todos(tb01b, 0.4, favorable = FALSE)
+
+library(tinytable)
+tt(sol01b, rownames = TRUE)
+
+```
+
+La alternativa **d1** es seleccionada como óptima por la mayoría de los criterios
+(Wald, Hurwicz, Savage y Punto Ideal).
+
+## Problema 2.
+
+Modelo de beneficios (favorable).
+
+Alternativas:
+
+d1: Centro comercial
+
+d2: Barrio universitario
+
+d3: Zona residencial
+
+Estados de la naturaleza:
+
+e1: Economía favorable
+
+e2: Economía estable
+
+e3: Recesión
+
+```{r}
+
+#Para e1:
+
+#Centro Comercial
+m11 = 180000-3500*12-60000-36000-8000
+
+#Barrio Universitario
+m12 = 180000-2000*12-55000-36000-6000
+
+#Zona Residencial
+m13 = 180000-1200*12-50000-36000-5000
+
+
+#Para e2:
+#Centro Comercial
+m21 = 120000-3500*12-60000-36000-8000
+
+#Barrio Universitario
+m22 = 120000-2000*12-55000-36000-6000
+
+#Zona Residencial
+m23 = 120000-1200*12-50000-36000-5000
+
+
+#Para e3:
+#Centro Comercial
+m31 = 80000-3500*12-60000-36000-8000
+
+#Barrio Universitario
+m32 = 80000-2000*12-55000-36000-6000
+
+#Zona Residencial
+m33 = 80000-1200*12-50000-36000-5000
+
+tb02<-crea.tablaX(
+  c(m11, m21, m31,  # Centro comercial
+    m12, m22, m32,  # Barrio universitario
+    m13, m23, m33), # Zona residencial 
+  numalternativas = 3,
+  numestados = 3, 
+  nb_estados= c("Favorable", "Estable", "Recesión"), 
+  nb_alternativas=c("CentroComercial", "BarrioUniversitario", "ZonaResidencial") )
+
+tb02
+
+sol02 = criterio.Todos(tb02, 0.5, favorable = FALSE)
+library(tinytable)
+tt(sol02, rownames = TRUE)
+
+
+
+```
+
+Según los distintos criterios de incertidumbre, Laura debería instalar su cafetería en el **centro comercial**.
