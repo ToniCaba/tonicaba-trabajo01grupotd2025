@@ -174,12 +174,23 @@ El punto en el que la alternativa óptima pasa de ser la segunda a la tercera es
 \newpage
 
 # Problemas Reyes
+
 ```{r, include=FALSE}
 source("teoriadecision_funciones_incertidumbre.R")
 
 ```
 
-## Problema 1. Aplicar los criterios de decisión bajo incertidumbre.
+## Problema 1
+
+Aplicar los criterios de decisión bajo incertidumbre a los problemas cuya matriz de valores numéricos vienen dadas en las tablas siguientes:
+
+|        | e1  | e2  |  e3  |
+|:------:|:---:|:---:|:----:|
+| **d1** | 120 | 60  | -20  |
+| **d2** | 80  | 140 |  0   |
+| **d3** | 200 | 50  | -100 |
+
+Realizarlo tanto para el caso favorable (beneficios) como para el desfavorable(costos).
 
 ### A. Caso favorable
 
@@ -251,8 +262,7 @@ tt(sol01a, rownames = TRUE)
 
 ```
 
-La alternativa **d2** resulta ser la más recomendada, ya que es seleccionada como óptima
-por la mayoría de los criterios (Wald, Hurwicz y Laplace).
+La alternativa **d2** resulta ser la más recomendada, ya que es seleccionada como óptima por la mayoría de los criterios (Wald, Hurwicz y Laplace).
 
 ### B. Caso desfavorable
 
@@ -319,12 +329,41 @@ tt(sol01b, rownames = TRUE)
 
 ```
 
-La alternativa **d1** es seleccionada como óptima por la mayoría de los criterios
-(Wald, Hurwicz, Savage y Punto Ideal).
+La alternativa **d1** es seleccionada como óptima por la mayoría de los criterios (Wald, Hurwicz, Savage y Punto Ideal).
 
 \newpage
 
 ## Problema 2.
+
+Laura es una joven emprendedora que desea abrir una cafetería artesanal y se encuentra analizando tres posibles ubicaciones para instalar su negocio: un local en el centro comercial, otro en el barrio universitario, y un tercero en una zona residencial.
+
+Cada local presenta diferentes costes y características:
+
+El local del centro comercial tiene un alquiler mensual de 5.000 euros, pero se encuentra en una zona con gran afluencia de público.
+
+El local del barrio universitario cuesta 2.500 euros mensuales y está en una zona frecuentada por estudiantes y profesores, aunque su actividad disminuye durante el verano.
+
+El local de la zona residencial tiene un alquiler de 1.000 euros al mes, con un flujo de clientes más estable, pero mucho menor.
+
+Además del alquiler, Laura estima que deberá asumir otros costes anuales fijos, que incluyen:
+
+Proveedores (materias primas como café, leche, repostería, etc.), con un gasto de 90.000 euros anuales en el centro comercial, 60.000 euros en el barrio universitario y 35.000 euros en la zona residencial.
+
+Coste de personal, que será de 54.000 € anuales en el centro comercial (mayor plantilla), 36.000 € en el barrio universitario y 24.000 € en la zona residencial.
+
+Otros gastos de mantenimiento, publicidad y electricidad, calculados en 12.000 euros para el centro comercial, 8.000 euros para el barrio universitario y 6.000 euros para la zona residencial.
+
+Laura cree que los ingresos anuales dependerán del estado de la economía durante el primer año de funcionamiento:
+
+Si la economía es favorable, calcula que podría ingresar 220.000 € en el centro comercial, 160.000 € en el barrio universitario, 130.000 € en la zona residencial.
+
+Si la situación se mantiene estable, sus ingresos serían de unos 150.000 €en el centro comercia, 110.000 € en el barrio universitario y 100.000 € en la zona residencial.
+
+Y si hay una recesión, las ventas podrían caer hasta 100.000 € en el centro comercial, 70.000 € en el barrio universitario, 75.000 € en la zona residencial.
+
+Su objetivo es determinar cuál de los tres locales le conviene más .
+
+**Solución**
 
 Modelo de beneficios (favorable).
 
