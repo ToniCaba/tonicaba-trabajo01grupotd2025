@@ -19,7 +19,8 @@ propuestos por cada unos de los miembros del grupo.
 - "problemas_resueltos_TD.pdf": archivo pdf con las soluciones de los problemas 
 propuestos por cada unos de los miembros del grupo.
 
+- "teoriadecision_funciones_incertidumbre.R": funciones utilizadas en la resolución de ejercicios
 
 - "README.md": este archivo
 
-- "teoriadecision_funciones_incertidumbre.R": funciones utilizadas en la resolución de ejercicios
+
