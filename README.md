@@ -2,7 +2,7 @@
 
 # Integrantes del grupo
 
-Claudia Trias de Tena, Reyes de las Aguas García Azancot, Benedetta Palmieri
+Claudia Trias de Tena, Reyes de las Aguas García Azancot, Benedetta Palmieri, Antonio Caballero Contreras
 
 # Archivos del repositorio
 
