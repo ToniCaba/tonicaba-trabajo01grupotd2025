@@ -545,5 +545,5 @@ resultado <- decision_incertidumbre(energia)
 knitr::kable(resultado, caption = "Resultados de todos los criterios")
 
 # Conclusión
-cat("**Conclusión:** La opción más recomendable según la mayoría de criterios es EólicaAndalucía.")
+print("**Conclusión:** La opción más recomendable según la mayoría de criterios es EólicaAndalucía.")
 
