@@ -21,3 +21,5 @@ propuestos por cada unos de los miembros del grupo.
 
 
 - "README.md": este archivo
+
+- "teoriadecision_funciones_incertidumbre.R": funciones utilizadas en la resolución de ejercicios
