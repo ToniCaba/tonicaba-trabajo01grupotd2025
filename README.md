@@ -27,6 +27,8 @@ propuestos por cada unos de los miembros del grupo.
 El repositorio fue creado por Antonio Caballero. 
 Cada uno de los miembros del grupo subió sus enunciados y problemas resueltos a los documentos conjuntos, creados por Claudia Trias. 
 Reyes añadió al repositorio los documentos en formato pdf.
-Los miembros del grupo, informaron de los inconvenientes que le surgieron, si es que había alguno, a través de los issues y, posteriormente, los solucionaron.
+Los miembros del grupo, informaron de los inconvenientes que le surgieron, si es que había alguno, a través de los issues y, posteriormente, los solucionaron. 
+
+P.D. Hay que tener en cuenta que hay 5 contribuciones, pero ambas cuentas, "bennypalmieri" y "benepalmieri", son de Benedetta.
 
 
