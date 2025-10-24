@@ -128,7 +128,7 @@ Paula y Claudia quieren hacer algo de deporte el fin de semana. Deciden que el d
 
 -   Salir a correr por el parque de al lado de su casa. Si decidiesen esto, deberían comprarse unos zapatos adecuados para ello, que les costarían 45 euros a cada una. La vuelta la harían andando, lloviese o no, pues no se van a alejar mucho de su casa.
 
--   Montar en bici. Para ello, tendrían que alquilarlas en una tienda cerca de su casa. El precio de alquiler es de 15 euros por hora y por persona. La vuelta la harían en bici si no llueve y en uber si llueve. Teniendo en cuenta que el uber ha de ser especial pues tiene que tener sitio para dos bicicletas, el precio es de 40 euros entre las dos.
+-   Montar en bici. Para ello, tendrían que alquilarlas en una tienda cerca de su casa. El precio de alquiler es de 15 euros por hora y por persona. La duración de la ruta sería de 2 horas. La vuelta la harían en bici si no llueve y en uber si llueve. Teniendo en cuenta que el uber ha de ser especial pues tiene que tener sitio para dos bicicletas, el precio es de 40 euros entre las dos.
 
 ¿Qué les recomienda usted que hagan, si su objetivo es minimizar los costes?
 
@@ -160,14 +160,14 @@ Añadimos los gráficos del Criterio de Hurwicz
 dibuja.criterio.Hurwicz(tb2, favorable = FALSE)
 ```
 
-Observamos que para un valor de alpha en el intervalo (0.2, 0.4), la alternativa óptima pasa de ser la 2 a la 3. Veamos con el siguiente gráfico en que punto ocurre esto.
+Observamos que para un valor de alpha en el intervalo (0.2, 0.4), la alternativa óptima pasa de ser la 2 (Correr) a la 3 (Montar en bici). Veamos con el siguiente gráfico en que punto ocurre esto.
 
 ```{r}
 dibuja.criterio.Hurwicz_Intervalos(tb2,favorable = FALSE)
 
 ```
 
-El punto en el que la alternativa óptima pasa de ser la segunda a la tercera es 0.25.
+El punto en el que la alternativa óptima pasa de ser la segunda (Correr) a la tercera (Montar en bici) es 0.25.
 
 \newpage
 
@@ -438,6 +438,8 @@ dibuja.criterio.Hurwicz(tb02, TRUE)
 ```
 
 Observando el gráfico, podemos apreciar que la alternativa de instalar la cafetería en el zona residencial es la óptima para cualquier valor de alpha entre 0 y 1.
+
+\newpage
 
 # Problemas Antonio
 
