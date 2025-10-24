@@ -479,48 +479,6 @@ mejor_proveedor
 
 ## Problema 2
 
----
-title: "Problemas de Teoría de la Decisión bajo Incertidumbre"
-format: pdf
-editor: visual
----
-
-# Problema 1: Elección de proveedor de café
-
-Una empresa que fabrica cápsulas de café debe decidir entre tres posibles proveedores: **Aroma S.A.**, **Cafés del Sur** y **Tostadores Sevilla**.\
-El precio por kilo dependerá de la **cosecha anual**, que puede ser *buena*, *normal* o *mala*.
-
-**Pregunta:**\
-Si la empresa no conoce las probabilidades de cada tipo de cosecha, ¿qué proveedor debería elegir para minimizar el riesgo de pagar precios altos?
-
-```{r}
-# Tabla de precios
-proveedores <- matrix(
-  c(8, 9, 13,
-    9, 8, 11,
-    7, 10, 15),
-  nrow = 3, byrow = TRUE
-)
-colnames(proveedores) <- c("Cosecha buena", "Cosecha normal", "Cosecha mala")
-rownames(proveedores) <- c("Aroma S.A.", "Cafés del Sur", "Tostadores Sevilla")
-
-# Mostrar tabla de precios
-print("Tabla de precios por proveedor (€/kg):")
-print(proveedores)
-
-# Criterio de Laplace (promedio de costes)
-media_costes <- rowMeans(proveedores)
-knitr::kable(data.frame(Proveedor=rownames(proveedores), Coste_Medio=media_costes),
-             caption = "Coste medio según Laplace")
-
-# Decisión recomendada
-mejor_proveedor <- names(which.min(media_costes))
-mejor_proveedor
-
-```
-
-# Problema 2: Elección de proveedor de energía
-
 Una pequeña cadena de supermercados de Sevilla debe elegir entre tres proveedores de energía:
 
 -   **SolarSur** (solar)\
