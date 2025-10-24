@@ -326,7 +326,7 @@ La alternativa **d1** es seleccionada como óptima por la mayoría de los criter
 
 \newpage
 
-## Problema 2.
+## Problema 2
 
 Laura es una joven emprendedora que desea abrir una cafetería artesanal y se encuentra analizando tres posibles ubicaciones para instalar su negocio: un local en el centro comercial, otro en el barrio universitario, y un tercero en una zona residencial.
 
@@ -477,6 +477,8 @@ mejor_proveedor
 
 ```
 
+\newpage
+
 ## Problema 2
 
 Una pequeña cadena de supermercados de Sevilla debe elegir entre tres proveedores de energía:
@@ -556,7 +558,7 @@ Aplicar los criterios de decisión bajo incertidumbre para los casos de benefici
 | **d2** |   65   |   45   |   40   |
 | **d3** |   80   |   60   |   35   |
 
-## Solución problema 1
+**Solución problema 1**
 
 Primero, cargamos las funciones necesarias para aplicar los criterios de decisión bajo incertidumbre y creamos la tabla de datos y despues se aplican los principales criterios de decisión bajo incertidumbre tanto en un contexto favorable (beneficios) como desfavorable (costes).
 
@@ -569,7 +571,7 @@ tab1 = crea.tablaX( c(30, 55, 110,
                    numestados = 3 )
 ```
 
-#### **Caso favorable (beneficios):**
+### A. Caso favorable (beneficios):
 
 el objetivo es **maximizar** el beneficio de cada alternativa.
 
@@ -609,7 +611,7 @@ print(gh_f)
 
 La mayoría de los criterios (Optimista, Hurwicz, Savage, Laplace y Punto Ideal) seleccionan la **Alternativa 1**, lo que indica que es la opción más equilibrada y robusta frente a la incertidumbre.
 
-#### **Caso desfavorable (costos):**
+### B. Caso desfavorable (costos):
 
 el objectivo es **minimizar** el coste de cada alternativa.
 
@@ -692,7 +694,7 @@ Costes estimados (en miles de €):
 
 El objetivo del análisis es determinar qué alternativa resulta más conveniente para la empresa en función de los distintos escenarios posibles considerados.
 
-## Solución problema 2
+**Solución problema 2**
 
 **Alternativas**:
 
