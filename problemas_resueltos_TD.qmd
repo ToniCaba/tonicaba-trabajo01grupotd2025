@@ -12,6 +12,10 @@ editor: visual
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+source("teoriadecision_funciones_incertidumbre.R")
+```
+
 # Problemas Claudia
 
 ## Problema 1
@@ -32,12 +36,6 @@ knitr::kable(tabla)
 ```
 
 **Solución**
-
-Cargamos las funciones con las que vamos a trabajar:
-
-```{r}
-source("teoriadecision_funciones_incertidumbre.R")
-```
 
 Creamos la tabla en el formato que necesitan dichas funciones:
 
@@ -174,11 +172,6 @@ El punto en el que la alternativa óptima pasa de ser la segunda a la tercera es
 \newpage
 
 # Problemas Reyes
-
-```{r, include=FALSE}
-source("teoriadecision_funciones_incertidumbre.R")
-
-```
 
 ## Problema 1
 
@@ -608,7 +601,6 @@ Aplicar los criterios de decisión bajo incertidumbre para los casos de benefici
 Primero, cargamos las funciones necesarias para aplicar los criterios de decisión bajo incertidumbre y creamos la tabla de datos y despues se aplican los principales criterios de decisión bajo incertidumbre tanto en un contexto favorable (beneficios) como desfavorable (costes).
 
 ```{r}
-source("teoriadecision_funciones_incertidumbre.R")
 
 tab1 = crea.tablaX( c(30, 55, 110,
                     65, 45, 40,
